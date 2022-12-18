@@ -7,6 +7,7 @@ COPY .mvn .mvn
 COPY pom.xml .
 RUN apk update && apk add dos2unix
 RUN dos2unix mvnw
+RUN chmod +x mvnw
 RUN ./mvnw dependency:go-offline
 
 COPY src src
