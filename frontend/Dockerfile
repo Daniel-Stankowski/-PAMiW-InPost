@@ -5,7 +5,7 @@ WORKDIR /app
 COPY package.json ./
 COPY package-lock.json ./
 RUN npm ci
-
+# export NODE_OPTIONS=--openssl-legacy-provider
 COPY . .
 RUN npm run build
 

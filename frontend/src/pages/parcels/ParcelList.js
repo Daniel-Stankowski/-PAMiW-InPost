@@ -42,6 +42,7 @@ function ParcelList() {
             </TableHead>
             <TableBody>
                 {parcelList}
+                {console.log(keycloak)}
             </TableBody>
             </Table>
         </TableContainer>
