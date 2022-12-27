@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="99b00131-fae4-48e7-9b3c-a09fd0bab395" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/pl/edu/pw/PAMiW/backend/controllers/AppUserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/pl/edu/pw/PAMiW/backend/controllers/ParcelLockerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/pl/edu/pw/PAMiW/backend/entities/AppUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/pl/edu/pw/PAMiW/backend/repositories/AppUserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/pl/edu/pw/PAMiW/backend/repositories/ParcelLockersRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/pl/edu/pw/PAMiW/backend/services/AppUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/pl/edu/pw/PAMiW/backend/services/KeycloakUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/pl/edu/pw/PAMiW/backend/services/ParcelLockerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/pl/edu/pw/PAMiW/backend/controllers/ParcelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/pl/edu/pw/PAMiW/backend/controllers/ParcelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/pl/edu/pw/PAMiW/backend/entities/Parcel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/pl/edu/pw/PAMiW/backend/entities/Parcel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/parcels/ParcelList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/parcels/ParcelList.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2JVmHHeo5DVEmQCecMcZG8qbGyt" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/-PAMiW-InPost/frontend",
+    "nodejs_package_manager_path": "npm"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="99b00131-fae4-48e7-9b3c-a09fd0bab395" name="Changes" comment="" />
+      <created>1672171535057</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1672171535057</updated>
+      <workItem from="1672171538743" duration="22000" />
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

@@ -18,6 +18,7 @@ public class Parcel {
 
     private String name;
 
+
     @ManyToOne
     @JoinColumn(name = "from_locker_id", referencedColumnName = "parcel_locker_id")
     private ParcelLocker from_locker;
@@ -26,9 +27,13 @@ public class Parcel {
     @JoinColumn(name = "to_locker_id", referencedColumnName = "parcel_locker_id")
     private ParcelLocker to_locker;
 
-    private String sender_id;
+    @ManyToOne
+    @JoinColumn(name = "sender_id", referencedColumnName = "appUser_id")
+    private AppUser sender;
 
-    private String receiver_id;
+    @ManyToOne
+    @JoinColumn(name = "receiver_id", referencedColumnName = "appUser_id")
+    private AppUser receiver;
 
     private ParcelState state;
 }
