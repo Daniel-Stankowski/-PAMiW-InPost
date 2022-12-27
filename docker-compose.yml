@@ -30,6 +30,8 @@ services:
         condition: service_healthy
       keycloak:
         condition: service_healthy
+      keycloak-initializer:
+        condition: service_completed_successfully
 
   db:
     image: postgres:15.0-alpine
