@@ -37,5 +37,12 @@ export const parcelsApi = {
     return parcelClient.delete(`/${id}`, {
       headers: {'Authorization': bearerAuth(token)}
     })
+  },
+
+  getByUser(keycloak_id, token) {
+    console.log(`Getting parcels of user with id: ${keycloak_id}`)
+    return parcelClient.get(`/user/${keycloak_id}`, {
+      headers: {'Authorization': bearerAuth(token)}
+    })
   }
 }

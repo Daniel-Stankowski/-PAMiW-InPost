@@ -33,6 +33,10 @@ public class KeycloakUserService {
         return usersResource.list();
     }
 
+    public List<String> getAllUsernames() {
+        return getUsersRepresentations().stream().map(userRepresentation -> userRepresentation.getUsername()).toList();
+    }
+
     public String getUsernameFromId(String keycloakId) {
         Optional<UserRepresentation> ur = this.getUsersRepresentations().stream().filter(userRepresentation -> userRepresentation.getId()
                 .equals(keycloakId)).findFirst();
