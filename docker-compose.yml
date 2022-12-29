@@ -1,24 +1,24 @@
 version: "3.9"
 services:
-  frontend:
-    container_name: frontend
+  frontend-od:
+    container_name: frontend-od
     build:
-      context: frontend
+      context: frontend-od
       dockerfile: Dockerfile
-    image: frontend:latest
+    image: frontend-od:latest
     ports:
       - '3000:3000'
     networks:
       - network
     depends_on:
-      - backend
+      - backend-od
 
-  backend:
-    container_name: backend
+  backend-od:
+    container_name: backend-od
     build:
-      context: backend
+      context: backend-od
       dockerfile: Dockerfile
-    image: backend:latest
+    image: backend-od:latest
     environment:
       - SPRING_PROFILES_ACTIVE=dev
     ports:
@@ -26,22 +26,22 @@ services:
     networks:
       - network
     depends_on:
-      db:
+      db-od:
         condition: service_healthy
-      keycloak:
+      keycloak-od:
         condition: service_healthy
-      keycloak-initializer:
+      keycloak-initializer-od:
         condition: service_completed_successfully
 
-  db:
+  db-od:
     image: postgres:15.0-alpine
     restart: always
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=backend
+      - POSTGRES_DB=backend-od
     volumes:
-      - db:/var/lib/postgresql/data
+      - db-od:/var/lib/postgresql/data
     ports:
       - '5432:5432'
     networks:
@@ -52,27 +52,27 @@ services:
       timeout: 5s
       retries: 5
 
-  keycloak-initializer:
-    container_name: keycloakInitializer
+  keycloak-initializer-od:
+    container_name: keycloakInitializer-od
     build:
-      context: keycloakInitializer
+      context: keycloakInitializer-od
       dockerfile: Dockerfile
-    image: keycloakinitializer:latest
+    image: keycloakinitializer-od:latest
     networks:
       - network
     depends_on:
-      keycloak:
+      keycloak-od:
         condition: service_healthy
 
-  keycloak:
+  keycloak-od:
     image: quay.io/keycloak/keycloak:20.0.1
-    container_name: keycloak
+    container_name: keycloak-od
     environment:
       - KEYCLOAK_ADMIN=admin
       - KEYCLOAK_ADMIN_PASSWORD=admin
       - KC_DB=mysql
-      - KC_DB_URL_HOST=keycloak-db
-      - KC_DB_URL_DATABASE=keycloak
+      - KC_DB_URL_HOST=keycloak-db-od
+      - KC_DB_URL_DATABASE=keycloak-od
       - KC_DB_USERNAME=keycloak
       - KC_DB_PASSWORD=password
     command: start-dev
@@ -81,21 +81,21 @@ services:
     networks:
       - network
     depends_on:
-      keycloak-db:
+      keycloak-db-od:
         condition: service_healthy
     healthcheck:
       test: "curl -f http://localhost:8080/admin || exit 1"
 
-  keycloak-db:
+  keycloak-db-od:
     image: mysql:8.0.31
-    container_name: keycloak-db
+    container_name: keycloak-db-od
     environment:
-      - MYSQL_DATABASE=keycloak
+      - MYSQL_DATABASE=keycloak-od
       - MYSQL_USER=keycloak
       - MYSQL_PASSWORD=password
       - MYSQL_ROOT_PASSWORD=root
     volumes:
-      - keycloak_db:/var/lib/mysql
+      - keycloak-db-od:/var/lib/mysql
     ports:
       - '3306:3306'
     networks:
@@ -108,7 +108,7 @@ networks:
     driver: bridge
 
 volumes:
-  db:
+  db-od:
     driver: local
-  keycloak_db:
+  keycloak-db-od:
     driver: local

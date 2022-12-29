@@ -1,0 +1,58 @@
+logging:
+  level:
+    com.example.backend: DEBUG
+
+server:
+  port: 8081
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${app.jwt.issuer-uri}
+          jwk-set-uri: ${app.jwt.issuer-uri}/protocol/openid-connect/certs
+
+app:
+  cors:
+    allowed-origins: http://localhost:3000
+  jwt:
+    issuer-uri: http://localhost:8080/realms/app
+    resource-client-ids: frontend-web
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+  datasource:
+    url: jdbc:postgresql://db-od:5432/backend-od
+    username: postgres
+    password: postgres
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL94Dialect
+    hibernate:
+      ddl-auto: update # (create, create-drop, validate, update)
+
+app:
+  jwt:
+    issuer-uri: http://keycloak-od:8080/realms/app
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: local
+
+  h2:
+    console.enabled: true # http://localhost:8080/h2-console
+  datasource:
+    url: jdbc:h2:mem:db
+    username: sa
+    password: sa
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
